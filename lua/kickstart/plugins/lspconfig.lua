@@ -124,12 +124,12 @@ return {
       local servers = {
         -- Tools (linters, analyzers, formatters, etc.)
         stylua = {},
-        clang_format = {},
+        --clang_format = {},
         autopep8 = {},
         shellharden = {},
         xmlformatter = {},
         yamlfmt = {},
-        ansible_lint = {},
+        --ansible_lint = {},
         cmakelint = {},
         gitlint = {},
         hadolint = {},
