@@ -25,6 +25,7 @@ detect_wsl()
 ---@return string command, table args
 function M.sandbox(cmd, ...)
   if not has_firejail() then
+    vim.g.sandbox_no_firejail = true
     vim.notify('[sandbox] firejail not found, running unsandboxed: ' .. cmd, vim.log.levels.WARN)
     return cmd, { ... }
   end
@@ -50,6 +51,7 @@ function M.build(cmd, ...)
     local cwd = vim.fn.getcwd()
 
     if not has_firejail() then
+      vim.g.sandbox_no_firejail = true
       vim.notify('[sandbox] firejail not found, running unsandboxed: ' .. cmd, vim.log.levels.WARN)
       local result = vim.system(vim.list_extend({ cmd }, extra), { cwd = cwd }):wait()
       if result.code ~= 0 then
@@ -67,5 +69,18 @@ function M.build(cmd, ...)
     end
   end
 end
+
+vim.api.nvim_create_autocmd('VimEnter', {
+  once = true,
+  callback = function()
+    if vim.g.sandbox_no_firejail then
+      vim.api.nvim_echo(
+        { { '[sandbox] firejail not found, commands will run unsandboxed', 'WarningMsg' } },
+        true,
+        {}
+      )
+    end
+  end,
+})
 
 return M
