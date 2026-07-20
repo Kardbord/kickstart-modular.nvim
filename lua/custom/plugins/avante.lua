@@ -1,11 +1,8 @@
--- Precompute the sandboxed npx invocation for opencode ACP.
-local opencode_acp_cmd, opencode_acp_args = require('custom.sandbox').sandbox('npx', '--yes', 'opencode-ai', 'acp')
-
 return {
   {
     'yetone/avante.nvim',
     -- ⚠️ must add this setting! ! !
-    build = vim.fn.has 'win32' ~= 0 and 'powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false' or require('custom.sandbox').build 'make',
+    build = vim.fn.has 'win32' ~= 0 and 'powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false' or 'make',
     event = 'VimEnter',
     version = '0.1.x', -- Never set this value to "*"! Never!
     ---@module 'avante'
@@ -126,8 +123,8 @@ return {
       },
       acp_providers = {
         opencode = {
-          command = opencode_acp_cmd,
-          args = opencode_acp_args,
+          command = 'npx',
+          args = {'--yes', 'opencode-ai', 'acp'},
           env = {
             OPENROUTER_API_KEY = require('custom.secrets').from_pass 'personal/openrouter/api-key',
             OPENAI_API_KEY = require('custom.secrets').from_pass 'personal/openai/api-key',
