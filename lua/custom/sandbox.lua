@@ -9,6 +9,8 @@ end
 ---Called once at module load time.
 local function detect_wsl()
   if vim.fn.has 'wsl' == 1 then
+    --FIXME: I don't think this is taking hold for WSL environments
+    --which means no sandboxing is actually happening.
     vim.env.container = 'lxc'
     return true
   end
