@@ -26,97 +26,97 @@ return {
       providers = {
         openrouter_free = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'openrouter/free',
         },
         openrouter_auto = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'openrouter/auto',
         },
         openrouter_haiku = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'anthropic/claude-haiku-4.5:floor',
         },
         openrouter_sonnet = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'anthropic/claude-sonnet-4.6:floor',
         },
         openrouter_deepseek_4_pro = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'deepseek/deepseek-v4-pro:floor',
         },
         openrouter_deepseek_4_flash = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'deepseek/deepseek-v4-flash:floor',
         },
         openrouter_deepseek_4_flash_free = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'deepseek/deepseek-v4-flash:free',
         },
         openrouter_qwen = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'qwen/qwen3.6-flash:floor',
         },
         openrouter_llama = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'nvidia/llama-3.3-nemotron-super-49b-v1.5:floor',
         },
         openrouter_mistral = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'mistralai/codestral-embed-2505:floor',
         },
         openrouter_gemini = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = '~google/gemini-flash-latest:floor',
         },
         openrouter_gemma = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'google/gemma-4-31b-it:free',
         },
         openrouter_kimi = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'moonshotai/kimi-k2.6:floor',
         },
         openrouter_glm = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'z-ai/glm-5.1:floor',
         },
         openrouter_mimo = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'xiaomi/mimo-v2.5-pro:floor',
         },
         openrouter_minimax = {
           __inherited_from = 'openai',
-          api_key_name = require('custom.secrets').from_pass 'personal/openrouter/api-key',
+          api_key_name = function() require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY') end,
           endpoint = 'https://openrouter.ai/api/v1',
           model = 'minimax/minimax-m2.7:floor',
         },
@@ -126,9 +126,15 @@ return {
           command = 'npx',
           args = {'--yes', 'opencode-ai', 'acp'},
           env = {
-            OPENROUTER_API_KEY = require('custom.secrets').from_pass 'personal/openrouter/api-key',
-            OPENAI_API_KEY = require('custom.secrets').from_pass 'personal/openai/api-key',
-            ANTHROPIC_API_KEY = require('custom.secrets').from_pass 'personal/anthropic/api-key',
+            OPENROUTER_API_KEY = function()
+              return require('custom.secrets').from_pass_or_env('personal/openrouter/api-key', 'OPENROUTER_API_KEY')
+            end,
+            OPENAI_API_KEY = function()
+              return require('custom.secrets').from_pass_or_env('personal/openai/api-key', 'OPENAI_API_KEY')
+            end,
+            ANTHROPIC_API_KEY = function()
+              return require('custom.secrets').from_pass_or_env('personal/anthropic/api-key', 'ANTHROPIC_API_KEY')
+            end,
             OPENCODE_CONFIG_DIR = vim.fn.stdpath 'config' .. '/lua/custom/opencode-config',
             OPENCODE_ENABLE_EXA = 'true',
           },
