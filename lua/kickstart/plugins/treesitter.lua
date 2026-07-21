@@ -82,7 +82,6 @@ return {
         'strace',
         'terraform',
         'textproto',
-        'tmux',
         'todotxt',
         'toml',
         'tsv',
