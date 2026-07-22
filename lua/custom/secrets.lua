@@ -61,7 +61,14 @@ end
 function M.from_pass_or_env(gopasskey, envkey)
   local value = M.from_pass(gopasskey)
   if value ~= nil then return value end
-  return M.from_env(envkey)
+  value = M.from_env(envkey)
+  if value == nil then
+    vim.notify(
+      ('secrets: could not find gopass key %q or env var %q'):format(gopasskey, envkey),
+      vim.log.levels.WARN
+    )
+  end
+  return value
 end
 
 return M
