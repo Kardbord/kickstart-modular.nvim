@@ -190,6 +190,8 @@ return {
         markdown_oxide = {},
         powershell_es = {},
         pyright = {},
+        rpm_lsp_server = {},
+        rpmlint = {},
         rust_analyzer = {},
         sqls = {},
         vimls = {},
