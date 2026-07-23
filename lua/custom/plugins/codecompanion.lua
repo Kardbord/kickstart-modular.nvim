@@ -3,7 +3,12 @@ return {
   "olimorris/codecompanion.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    "nvim-cmp"
+    "nvim-cmp",
+    'MeanderingProgrammer/render-markdown.nvim',
+    opts = {
+      file_types = { 'markdown', 'Avante' },
+    },
+    ft = { 'markdown', 'Avante' },
   },
   opts = {
 
