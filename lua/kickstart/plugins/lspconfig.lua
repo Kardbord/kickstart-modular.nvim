@@ -123,6 +123,7 @@ return {
       ---@type table<string, vim.lsp.Config>
       local servers = {
         -- Tools (linters, analyzers, formatters, etc.)
+        actionlint = {},
         stylua = {},
         --clang_format = {},
         autopep8 = {},
