@@ -55,6 +55,10 @@ vim.o.splitbelow = true
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
+-- Display any tab as 2 columns, in every file, regardless of the file's own
+-- indentation convention. File content is never rewritten (expandtab stays off).
+vim.opt.tabstop = 2
+
 -- Preview substitutions live, as you type!
 vim.o.inccommand = 'split'
 
