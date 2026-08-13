@@ -8,7 +8,19 @@ return {
   config = function()
     local lint = require 'lint'
     lint.linters_by_ft = {
-      markdown = { 'markdownlint' }, -- Make sure to install `markdownlint` via mason / npm
+      cmake = { 'cmakelint' },
+      dockerfile = { 'hadolint' },
+      gitcommit = { 'gitlint' },
+      go = { 'golangcilint' },
+      json = { 'jsonlint' },
+      lua = { 'luacheck' },
+      markdown = { 'vale', 'markdownlint' },
+      python = { 'ruff' },
+      rpm_spec = { 'rpmlint' },
+      rust = { 'clippy' },
+      sh = { 'shellcheck' },
+      systemd = { 'systemdlint' },
+      yaml = { 'actionlint', 'yamllint' },
     }
 
     -- To allow other plugins to add linters to require('lint').linters_by_ft,

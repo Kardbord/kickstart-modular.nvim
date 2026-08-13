@@ -27,12 +27,12 @@ return {
       },
       -- You can also specify external formatters in here.
       formatters_by_ft = {
-        -- rust = { 'rustfmt' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        lua = { 'stylua' },
+        python = { 'ruff_format' },
+        rust = { 'rustfmt' },
+        sh = { 'shfmt' },
+        xml = { 'xmlformatter' },
+        yaml = { 'yamlfmt' },
       },
     },
   },
