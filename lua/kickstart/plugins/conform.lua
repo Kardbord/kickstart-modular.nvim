@@ -31,8 +31,6 @@ return {
         python = { 'ruff_format' },
         rust = { 'rustfmt' },
         sh = { 'shfmt' },
-        xml = { 'xmlformatter' },
-        yaml = { 'yamlfmt' },
       },
     },
   },
