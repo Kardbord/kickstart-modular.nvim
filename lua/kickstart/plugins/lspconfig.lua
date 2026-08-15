@@ -226,8 +226,6 @@ return {
             },
           },
         },
-
-
       }
 
       -- Ensure the servers and tools above are installed
@@ -253,7 +251,6 @@ return {
         'shellcheck',
         'systemdlint',
         'vale',
-        'yamllint',
         -- Formatters (wired up in kickstart.plugins.conform)
         'shfmt',
         'stylua',
