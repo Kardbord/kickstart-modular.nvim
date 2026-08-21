@@ -26,7 +26,7 @@ return {
           opencode = {
             commands = {
               default = {
-                "npx", "--yes", "opencode-ai", "acp"
+                "opencode", "acp"
               },
             },
             env = {
@@ -61,8 +61,7 @@ return {
         agent = "opencode",
         agents = {
           opencode = {
-            cmd = "npx",
-            args = { "--yes", "opencode-ai" },
+            cmd = "opencode",
             description = "OpenCode CLI",
             provider = "terminal",
           },
