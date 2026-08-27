@@ -4,5 +4,13 @@ return {
   'nvim-mini/mini.pick',
   'ibhagwan/fzf-lua',
   'stevearc/dressing.nvim',
-  'folke/snacks.nvim',
+  {
+    'folke/snacks.nvim',
+    priority = 1000,
+    opts = {
+      words = { enabled = true },
+      notifier = { enabled = true },
+      dashboard = { enabled = true },
+    },
+  },
 }
