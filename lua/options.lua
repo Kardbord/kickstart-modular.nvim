@@ -79,4 +79,29 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
+-- Register compound filetypes used by LSP servers
+vim.filetype.add {
+  filename = {
+    ['docker-compose.yml'] = 'yaml.docker-compose',
+    ['docker-compose.yaml'] = 'yaml.docker-compose',
+    ['compose.yml'] = 'yaml.docker-compose',
+    ['compose.yaml'] = 'yaml.docker-compose',
+    ['.gitlab-ci.yml'] = 'yaml.gitlab',
+    ['.gitlab-ci.yaml'] = 'yaml.gitlab',
+  },
+  pattern = {
+    ['.*ansible/.*%.ya?ml'] = 'yaml.ansible',
+    ['.*roles/.*%.ya?ml'] = 'yaml.ansible',
+    ['.*playbook.*%.ya?ml'] = 'yaml.ansible',
+    ['.github/workflows/.*%.ya?ml'] = 'yaml.github-actions',
+    ['.*%.tmpl'] = {
+      function(path, bufnr)
+        local root = vim.fs.find('go.mod', { path = path, upward = true })[1]
+        if root then return 'gotmpl' end
+      end,
+      { priority = -1 },
+    },
+  },
+}
+
 -- vim: ts=2 sts=2 sw=2 et
