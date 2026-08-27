@@ -250,7 +250,6 @@ return {
         'rpmlint',
         'shellcheck',
         'systemdlint',
-        'vale',
         -- Formatters (wired up in kickstart.plugins.conform)
         'shfmt',
         'stylua',

@@ -14,7 +14,7 @@ return {
       go = { 'golangcilint' },
       json = { 'jsonlint' },
       lua = { 'luacheck' },
-      markdown = { 'vale', 'markdownlint' },
+      markdown = { 'markdownlint' },
       python = { 'ruff' },
       rpm_spec = { 'rpmlint' },
       rust = { 'clippy' },
