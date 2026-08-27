@@ -8,7 +8,20 @@ vim.api.nvim_create_user_command('Update', function()
   require('nvim-treesitter.install').update { with_sync = true }
 
   log('Updating Mason packages...')
-  require('mason-registry').update()
+  local registry = require 'mason-registry'
+  registry.refresh(function()
+    local installed = registry.get_installed_packages()
+    for _, pkg in ipairs(installed) do
+      if not pkg:is_installing() then
+        local installed_version = pkg:get_installed_version()
+        local latest_version = pkg:get_latest_version()
+        if installed_version ~= latest_version then
+          log(('  Updating %s (%s -> %s)'):format(pkg.name, installed_version or '?', latest_version))
+          pkg:install({ version = latest_version, force = true })
+        end
+      end
+    end
+  end)
 
   log('Cleaning unused plugins...')
   require('lazy').clean { show = false }

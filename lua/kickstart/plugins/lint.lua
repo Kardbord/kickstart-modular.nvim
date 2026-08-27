@@ -20,6 +20,7 @@ return {
       rust = { 'clippy' },
       sh = { 'shellcheck' },
       systemd = { 'systemdlint' },
+      ['yaml.github-actions'] = { 'actionlint' },
     }
 
     -- To allow other plugins to add linters to require('lint').linters_by_ft,
