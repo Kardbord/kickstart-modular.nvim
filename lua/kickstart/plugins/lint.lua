@@ -23,6 +23,12 @@ return {
       ['yaml.github-actions'] = { 'actionlint' },
     }
 
+    lint.linters.shellcheck = function()
+      local linter = lint.linters.shellcheck()
+      linter.args = vim.list_extend(linter.args or {}, { '--external-sources', '--check-sourced' })
+      return linter
+    end
+
     -- To allow other plugins to add linters to require('lint').linters_by_ft,
     -- instead set linters_by_ft like this:
     -- lint.linters_by_ft = lint.linters_by_ft or {}
